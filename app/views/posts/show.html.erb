@@ -1,0 +1,11 @@
+<h1><%= @post.title %></h1>
+
+<div>
+  <%= @post.body %>
+</div>
+
+<div id='comments'>
+  <%= render @post.comments %>
+  <%= render 'comments/form', comment: @post.comments.build, post: @post if current_user %>
+  <%= render 'shared/register' unless current_user %>
+</div>

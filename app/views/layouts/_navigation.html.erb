@@ -1,0 +1,14 @@
+<div class='navbar navbar-static-top'>
+  <div class='navbar-inner'>
+    <div class='container'>
+      <a class='brand' href='#'>SimpleBlog</a>
+      <ul class='nav'>
+        <li class='active'><%= link_to "Home", root_path %></li>
+      </ul>
+      <ul class='nav pull-right'>
+        <li><%= link_to "Profile", edit_user_registration_path %></li>
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+      </ul>
+    </div>
+  </div>
+</div>
