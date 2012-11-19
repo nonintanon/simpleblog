@@ -1,14 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.9'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'rake', '0.9.2.2'
 gem 'devise'
-
+gem 'carrierwave'
+gem "mini_magick", "~> 3.4"
+gem "high_voltage"
 
 # Gems used only for assets and not required
 # in production environments by default.

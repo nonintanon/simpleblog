@@ -9,9 +9,24 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name
   # attr_accessible :title, :body
 
+  has_many :photos
   has_many :comments
+  has_many :subscriptions
+  has_many :subscribed_photos, 
+           through: :subscriptions, 
+           source: :subscribable, 
+           conditions: { subscriptions: { subscribable_type: "Photo" }}
+
+  has_many :subscribed_posts, 
+           through: :subscriptions, 
+           source: :subscribable, 
+           conditions: { subscriptions: { subscribable_type: "Post" }}
 
   def to_s
     name.present? ? name : email
+  end
+
+  def subscription_for resource
+    subscriptions.where(subscribable_type: resource.class.name, subscribable_id: resource.id).first
   end
 end

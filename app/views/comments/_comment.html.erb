@@ -2,5 +2,6 @@
   <%= comment.body %>
   <span class='pull-right'>
     <%= comment.user rescue 'no user' %>
+    <%= comment_action_for comment %>
   </span>
 <% end %>

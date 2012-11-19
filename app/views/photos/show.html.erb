@@ -1,0 +1,18 @@
+<h1><%= @photo.caption %></h1>
+<div class='row'>
+  <span class='span12'>
+    <%= subscribe_button_for @photo %>
+    <%= link_to "Edit", edit_photo_path(@photo), class: 'btn pull-right' if @photo.user == current_user %>
+  </span>
+</div>
+<div class='row'>
+  <span class='span12'>
+    <%= image_tag @photo.file.url %>
+  </span>
+</div>
+
+<div id='comments'>
+  <%= render @photo.comments, commentable: @photo %>
+  <%= render_comment_form_for @photo %>
+  <%= render 'shared/register' unless current_user %>
+</div>

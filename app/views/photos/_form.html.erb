@@ -1,0 +1,21 @@
+<h1><%= @photo.new_record? ? "New Photo" : "Edit Photo" %></h1>
+<div>
+<%= form_for @photo, html: { class: 'form-horizontal', multipart: true } do |f| %>
+  <%= render 'shared/error_messages', target: @photo %>
+  <div class='control-group'>
+    <%= f.label :file, class: 'control-label' %>
+    <div class='controls'>
+      <%= f.file_field :file, class: 'input-xxlarge', size: '10x10' %>
+    </div>
+  </div>
+  <div class='control-group'>
+    <%= f.label :caption, class: 'control-label' %>
+    <div class='controls'>
+      <%= f.text_field :caption, class: 'input-xxlarge' %>
+    </div>
+  </div>
+  <div class='form-actions'>
+    <%= f.submit @photo.new_record? ? "Create Photo" : "Update Photo", class: 'btn btn-success' %>
+  </div>
+<% end %>
+</div>

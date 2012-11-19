@@ -6,6 +6,6 @@
 
 <div id='comments'>
   <%= render @post.comments %>
-  <%= render 'comments/form', comment: @post.comments.build, post: @post if current_user %>
+  <%= render_comment_form_for @post %>
   <%= render 'shared/register' unless current_user %>
 </div>
