@@ -27,6 +27,7 @@ class User < ActiveRecord::Base
   end
 
   def subscription_for resource
-    subscriptions.where(subscribable_type: resource.class.name, subscribable_id: resource.id).first
+    subscriptions.where{(subscribable_type.eq resource.class.name) & 
+                        (subscribable_id.eq resource.id)}.first
   end
 end

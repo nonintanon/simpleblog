@@ -12,6 +12,7 @@ gem "mini_magick", "~> 3.4"
 gem "high_voltage"
 gem 'rabl'
 gem 'yajl-ruby'
+gem "squeel"
 gem "sidekiq"
 gem 'slim'
 gem 'sinatra', :require => nil
@@ -31,6 +32,13 @@ end
 
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
+end
+
+group :test do 
+  gem "capybara"
+  gem "machinist", '>= 2.0.0.beta2'
+  gem "shoulda-matchers"
+  gem "database_cleaner"
 end
 
 gem 'jquery-rails'
