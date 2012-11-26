@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121119081203) do
+ActiveRecord::Schema.define(:version => 20121121062612) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -26,8 +26,9 @@ ActiveRecord::Schema.define(:version => 20121119081203) do
     t.string   "caption"
     t.string   "file"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "processing", :default => false
   end
 
   create_table "posts", :force => true do |t|

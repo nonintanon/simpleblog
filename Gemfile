@@ -10,6 +10,11 @@ gem 'devise'
 gem 'carrierwave'
 gem "mini_magick", "~> 3.4"
 gem "high_voltage"
+gem 'rabl'
+gem 'yajl-ruby'
+gem "sidekiq"
+gem 'slim'
+gem 'sinatra', :require => nil
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,6 +27,10 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :test, :development do
+  gem "rspec-rails", "~> 2.0"
 end
 
 gem 'jquery-rails'
