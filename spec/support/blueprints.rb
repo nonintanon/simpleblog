@@ -8,6 +8,11 @@ require 'machinist/active_record'
 #     body  { "Lorem ipsum..." }
 #   end
 
+Comment.blueprint do 
+  body { "Test Body dsfkljljdskfkldjs" }
+  user { object.user || User.make! }
+end
+
 Photo.blueprint do 
   caption { "Test Caption #{sn} "}
   processing { false }

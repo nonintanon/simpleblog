@@ -6,14 +6,14 @@ describe User do
   it { should have_many(:subscribed_posts).through(:subscriptions)}
 
   context "User#to_s" do
-    describe "should return name" do
+    describe "when name is present" do
       let(:user) { User.make! }
       subject { user }
 
       its(:to_s) { should eq user.name }
     end
 
-    describe "should return email" do 
+    describe "when name is not present" do 
       let(:user) { User.make!(name: '')}
       subject { user } 
 
