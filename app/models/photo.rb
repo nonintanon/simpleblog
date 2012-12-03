@@ -5,5 +5,7 @@ class Photo < ActiveRecord::Base
   has_many :subscriptions, as: :subscribable
   has_many :subscribers, through: :subscriptions, source: :user
 
+  scope :order_by_subscriptions_count, -> { order('subscriptions_count DESC') }
+
   mount_uploader :file, ImageUploader
 end

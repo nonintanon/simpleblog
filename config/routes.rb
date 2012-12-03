@@ -12,6 +12,8 @@ Simpleblog::Application.routes.draw do
     resources :subscriptions, only: [:create, :destroy]
   end
 
+  resources :comments
+
 
   mount Sidekiq::Web => '/sidekiq'
   match '/:id' => 'high_voltage/pages#show', :as => :static, :via => :get

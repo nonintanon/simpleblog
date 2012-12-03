@@ -9,6 +9,7 @@
 <body class="<%= body_class %>">
   <%= render 'layouts/navigation' %>
   <div class='container'>
+    <%= render 'layouts/flash', flash: flash %>
     <%= yield %>
   </div>
 </body>

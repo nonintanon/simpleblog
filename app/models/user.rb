@@ -9,18 +9,16 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name
   # attr_accessible :title, :body
 
-  has_many :photos
+  has_many :photos, order: "photos.subscriptions_count DESC"
   has_many :comments
   has_many :subscriptions
   has_many :subscribed_photos, 
            through: :subscriptions, 
-           source: :subscribable, 
-           conditions: { subscriptions: { subscribable_type: "Photo" }}
+           source:  :subscribable_photo
 
   has_many :subscribed_posts, 
            through: :subscriptions, 
-           source: :subscribable, 
-           conditions: { subscriptions: { subscribable_type: "Post" }}
+           source: :subscribable_post
 
   def to_s
     name.present? ? name : email

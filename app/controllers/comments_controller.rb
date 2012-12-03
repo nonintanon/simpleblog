@@ -24,14 +24,14 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.build(params[:comment])
     if @comment.user = current_user and @comment.save
-      redirect_to @commentable
+      respond_with @comment
     end
   end
 
   def destroy
     @comment = get_comment
     if @comment.user == current_user and @comment.destroy
-      redirect_to @commentable
+      respond_with @comment
     end
   end
 

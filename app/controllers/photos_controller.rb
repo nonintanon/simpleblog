@@ -2,7 +2,7 @@ class PhotosController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @photos = Photo.all
+    @photos = Photo.order_by_subscriptions_count
   end
 
   def show
@@ -16,8 +16,11 @@ class PhotosController < ApplicationController
   def create
     @photo = current_user.photos.build(params[:photo])
     if @photo.save
-      redirect_to photos_path
+      flash[:success] = "Your Photo has been created"
+    else
+      flash[:error] = "Your photo could not be saved"
     end
+    redirect_to photos_path
   end
 
   def edit
