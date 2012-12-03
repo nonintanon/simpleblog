@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simpleblog</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= body_class %>">
+  <%= render 'layouts/navigation' %>
+  <div class='container'>
+    <%= render 'layouts/flash', flash: flash %>
+    <%= yield %>
+  </div>
+</body>
+</html>

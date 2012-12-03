@@ -1,0 +1,4 @@
+<h1>Hi! <%= @user %></h1>
+
+<p><%= @comment.user %> has commented on a photo you subscribed to.</p>
+<p>Click <%= link_to "here to view your item", polymorphic_url([@comment.commentable]) %></p>

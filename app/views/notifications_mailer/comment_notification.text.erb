@@ -1,0 +1,6 @@
+Hi! <%= @user %>
+
+<%= @comment.user %> has commented on a photo you subscribed to.
+
+Copy / Paste the url below to view the item
+<%= polymorphic_url([@comment.commentable]) %>

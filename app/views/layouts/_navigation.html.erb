@@ -1,0 +1,14 @@
+<div class='navbar navbar-static-top'>
+  <div class='navbar-inner'>
+    <div class='container'>
+      <a class='brand' href='#'>SimpleBlog</a>
+      <ul class='nav'>
+        <li class="<%= active_status_for 'posts' %>"><%= link_to "Post", posts_path %></li>
+        <li class="<%= active_status_for 'photos' %>"><%= link_to "Photos", photos_path %></li>
+      </ul>
+      <ul class='nav pull-right'>
+       <%= render 'layouts/settings' %>
+      </ul>
+    </div>
+  </div>
+</div>

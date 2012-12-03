@@ -1,0 +1,2 @@
+window.SimpleBlog =
+  helpers: {}
